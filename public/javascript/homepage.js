@@ -21,6 +21,7 @@
 
 $(document).ready(
     $(function () {
+
         $('#outcome').bind('inview', function (event, visible) {
             animateIcons(event, visible, $('#outcome'));
         });
@@ -36,10 +37,32 @@ $(document).ready(
         function animateIcons(event, visible, element) {
             if (visible === true) {
                 setTimeout(function () {
-                    element.addClass('animated fadeInUp');
+                    element.addClass('animated flipInY');
                     element.unbind('inview');
                 },300)
             } 
         }
     })
 )
+
+//$(document).ready(
+//    $(function () {
+
+//        $('#about-d4').bind('inview', function (event, visible) {
+//            animateInfo(event, visible, $('#about-d4'));
+//        });
+
+//        $('#goal-attainment').bind('inview', function (event, visible) {
+//            animateInfo(event, visible, $('#goal-attainment'));
+//        });
+
+//        function animateInfo(event, visible, element) {
+//            if (visible === true) {
+//                setTimeout(function () {
+//                    element.addClass('animated slideInLeft');
+//                    element.unbind('inview');
+//                }, 300)
+//            }
+//        }
+//    })
+//)
