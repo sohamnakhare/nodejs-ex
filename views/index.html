@@ -17,7 +17,7 @@
         <nav class="navbar navbar-default d4-navbar" id="d4-navbar">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" 
+                    <button type="button"
                         class="navbar-toggle"
                         data-toggle="collapse"
                         data-target="#nav-links"
@@ -27,19 +27,19 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#">
+                    <a href="/">
                         <img id="logo-image"
-                             class="img img-responsive d4-logo"
-                             src="images/D4_Logo_TM_RGB.jpg" />
+                            class="img img-responsive d4-logo"
+                            src="images/D4_Logo_TM_RGB.jpg" />
                     </a>
                 </div>
                 <div class="navbar-collapse collapse" id="nav-links">
                     <ul class="nav navbar-nav navbar-right d4-nav-links">
-                        <li class="active">
+                        <li>
                             <a href="#">Technology</a>
                         </li>
                         <li>
-                            <a href="#">Solution</a>
+                            <a href="/solutions">Solution</a>
                         </li>
                         <li>
                             <a href="#">Company</a>
@@ -59,7 +59,7 @@
     <!-----------------------------------------------------------Carousel--------------------------------------------------------->
 
     <section>
-        <div class="container-fluid" style="margin-bottom: 30px">
+        <div class="container-fluid">
             <div class="row">
                 <div id="carousel-example-generic"
                     class="carousel slide"
@@ -221,7 +221,7 @@
     </section>
 
     <section>
-        <div class="container-fluid bg-green ">
+        <div class="container-fluid bg-green">
             <div class="row">
                 <div class="col-xs-6 col-sm-3 general-info-container">
                     <ul class="quick-info-links">
@@ -261,30 +261,18 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="footer">
-                    <div class="social-media-icons pull-right">
-                        <i class="fa fa-2x fa-facebook-square" aria-hidden="true"></i>
-                        <i class="fa fa-2x fa-linkedin-square" aria-hidden="true"></i>
-                        <i class="fa fa-2x fa-twitter" aria-hidden="true"></i>
-                        <i class="fa fa-2x fa-youtube-play" aria-hidden="true"></i>
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="social-media-icons pull-right">
+                                <div>
+                                    <i class="fa fa-2x fa-facebook-square" aria-hidden="true"></i>
+                                    <i class="fa fa-2x fa-linkedin-square" aria-hidden="true"></i>
+                                    <i class="fa fa-2x fa-twitter" aria-hidden="true"></i>
+                                    <i class="fa fa-2x fa-youtube-play" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <!--<div class="copyright-info text-center">
-                        <ul>
-                            <li>
-                                <strong>License information</strong>
-                            </li>
-                            <li>
-                                <strong>Term of use</strong>
-                            </li>
-                            <li>
-                                <strong>Privacy Policy</strong>
-                            </li>
-                        </ul>
-                        <br />
-                        <p>
-                            <strong>Copyright &#xA9; 2015.&nbsp;D4 Technologies.&nbsp;All right reserved</strong>
-                        </p>
-                    </div>-->
                 </div>
             </div>
         </div>
@@ -294,6 +282,7 @@
     <script src="lib/jquery/jquery-1.9.1.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 
+    <script src="javascript/navbar-animation.js"></script>
     <script src="javascript/homepage.js"></script>
     <script src="javascript/isInView.js"></script>
 </body>
