@@ -236,24 +236,37 @@
 
 
 .solution-bg-img {
-    min-height: 500px;
+    min-height: 250px;
     background: url("../images/analysis.jpg");
 }
 
-    .solution-bg-img .solutions-header {
-        font-size: 5rem;
-        font-weight: bolder;
+@media (min-width: 768px) {
+    .solution-bg-img {
+        min-height: 500px;
+        background: url("../images/analysis.jpg");
     }
+}
+
+.solution-bg-img .solutions-header {
+    font-size: 5rem;
+    font-weight: bolder;
+}
 
 .img-align-middle {
     margin-left: auto;
     margin-right: auto;
 }
 
+@media (min-width: 992px) {
+    .paralax {
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
 .paralax {
     position: relative;
-    background-attachment: fixed;
-    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
 }
