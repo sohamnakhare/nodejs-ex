@@ -46,5 +46,3 @@ $(function() {
     });
   }
 });
-
-// testing build
