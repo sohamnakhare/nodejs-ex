@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.css" />
     <link rel="stylesheet" href="lib/font-awesome/font-awesome.min.css" />
-    <link rel="stylesheet" href="style/main.css" />
     <link rel="stylesheet" href="style/animate.css" />
+    <link rel="stylesheet" href="lib/smartmenus-1.0.1/smartmenus-1.0.1/css/sm-clean/sm-clean.css" />
+    <link rel="stylesheet" href="style/main.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-default d4-navbar" id="d4-navbar">
+       <nav class="navbar navbar-default main-nav d4-navbar" id="d4-navbar">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <!-- Mobile menu toggle button (hamburger/x icon) -->
@@ -22,19 +23,28 @@
                     <label class="main-menu-btn" for="main-menu-state" data-toggle="collapse" data-target="#nav-links">
                         <span class="main-menu-btn-icon"></span> Toggle main menu visibility
                     </label>
+
                     <a href="/">
-                        <img id="logo-image"
-                            class="img img-responsive d4-logo"
-                            src="images/D4_Logo_TM_RGB.jpg" />
+                        <img id="logo-image" class="img img-responsive d4-logo" src="images/D4_Logo_TM_RGB.jpg" />
                     </a>
                 </div>
                 <div class="navbar-collapse collapse" id="nav-links">
-                    <ul class="nav navbar-nav navbar-right d4-nav-links">
+                    <ul id="main-menu" class="nav navbar-nav navbar-right d4-nav-links sm sm-clean">
                         <li>
                             <a href="#">Technology</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Tech 1</a></li>
+                                <li><a href="#">Tech 2</a></li>
+                                <li><a href="#">Tech 3</a></li>
+                            </ul>
                         </li>
-                        <li class="active">
-                            <a href="#">Solution</a>
+                        <li>
+                            <a href="/solutions">Solution</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Healthcare</a></li>
+                                <li><a href="#">Real Estate</a></li>
+                                <li><a href="#">Finance</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#">Company</a>
@@ -44,6 +54,9 @@
                         </li>
                         <li>
                             <a href="#">Career</a>
+                        </li>
+                        <li>
+                            <a href="#">Blog</a>
                         </li>
                     </ul>
                 </div>
@@ -226,6 +239,8 @@
 
     <script src="lib/jquery/jquery-1.9.1.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/smartmenus-1.0.1/smartmenus-1.0.1/jquery.smartmenus.min.js"></script>
+    <script src="lib/smartmenus-1.0.1/smartmenus-1.0.1/addons/bootstrap/jquery.smartmenus.bootstrap.min.js"></script>
     <script src="javascript/navbar-animation.js"></script>
 </body>
 </html>

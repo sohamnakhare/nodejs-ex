@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.css" />
     <link rel="stylesheet" href="lib/font-awesome/font-awesome.min.css" />
     <link rel="stylesheet" href="style/animate.css" />
+    <link rel="stylesheet" href="lib/smartmenus-1.0.1/smartmenus-1.0.1/css/sm-clean/sm-clean.css" />
     <link rel="stylesheet" href="style/main.css" />
 </head>
 
@@ -30,9 +31,14 @@
                     </a>
                 </div>
                 <div class="navbar-collapse collapse" id="nav-links">
-                    <ul class="nav navbar-nav navbar-right d4-nav-links">
+                    <ul id="main-menu" class="nav navbar-nav navbar-right d4-nav-links sm sm-clean">
                         <li>
                             <a href="#">Technology</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Tech 1</a></li>
+                                <li><a href="#">Tech 2</a></li>
+                                <li><a href="#">Tech 3</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="/solutions">Solution</a>
