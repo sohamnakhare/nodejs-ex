@@ -25,6 +25,18 @@
     background-color: rgb(215, 215, 215) !important;
 }
 
+.bottom-border-grey{
+    border-bottom: 1px solid rgb(215, 215, 215);
+}
+
+.bottom-border-grey-thick{
+    border-bottom: 3px solid rgb(215, 215, 215);
+}
+
+.bottom-border-orange-thick{
+    border-bottom: 3px solid rgb(241, 93, 34);
+}
+
 .bg-green {
     background-color: rgb(141, 198, 63) !important;
 }
@@ -240,10 +252,24 @@
     background: url("../images/analysis.jpg");
 }
 
+.blog-bg-img {
+    min-height: 250px;
+    background-position: center;
+    background-size: cover;
+    background: url("../images/blog.jpg");
+}
+
 @media (min-width: 768px) {
     .solution-bg-img {
         min-height: 500px;
         background: url("../images/analysis.jpg");
+    }
+
+    .blog-bg-img {
+        min-height: 500px;
+        width: 100%;
+        background-size: 100%;
+        background: url("../images/blog.jpg");
     }
 }
 
@@ -407,4 +433,9 @@
   #main-menu-state:not(:checked) ~ #main-menu {
     display: block;
   }
+}
+
+.blog{
+    padding-top: 25px;
+    padding-bottom: 25px;
 }

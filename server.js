@@ -84,6 +84,10 @@ app.get('/solutions', function (req, res) {
     res.render('solutions.html');
 })
 
+app.get('/blog', function (req, res) {
+    res.render('blog.html');
+})
+
 app.get('/pagecount', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
