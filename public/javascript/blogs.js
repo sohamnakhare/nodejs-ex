@@ -1,63 +1,80 @@
-var blogs = [
-    {
-        date: '10 May 2016',
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "+
-        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "+
-        "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure "+
-        "dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "+
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        heading: 'The standard Lorem Ipsum passage, used since the 1500s'
-    },
-    {
-        date: '10 May 2016',
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "+
-        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "+
-        "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure "+
-        "dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "+
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        heading: 'The standard Lorem Ipsum passage, used since the 1500s'
-    },
-    {
-        date: '10 May 2016',
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "+
-        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "+
-        "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure "+
-        "dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "+
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        heading: 'The standard Lorem Ipsum passage, used since the 1500s'
-    },
-    {
-        date: '10 May 2016',
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "+
-        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "+
-        "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure "+
-        "dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "+
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        heading: 'The standard Lorem Ipsum passage, used since the 1500s'
-    }
-];
-
 $(document).ready(
     $(function () {
-        $.each(blogs, function(i, blog){
-            var blogHtml = getBlogHtml(i, blog);
-            $('#blogs').append(blogHtml);
-        });
+        
 
-        function getBlogHtml(i, blog){
-            var html = '';
-            html += '<div class="col-xs-12 blog '+
-                        (i!= blogs.length -1 ? 'bottom-border-grey-thick' : '')+
-                    '">'
+        var blogsElements = $('#blogs .blog').find('.more-link').remove();
+
+        function addContinueReadingLink(element, blog) {
+            var clickhandler = continueReadingClick.bind(this, blog);
+            var continueReadingLink = blogHelper.getContinueReadingElement();
+            continueReadingLink.click(function() {
+                clickhandler();
+            });
+            element.append(continueReadingLink);
+        }
+    })
+);
+
+var blogHelper = (function(){
+    return{
+     getBlogHtml: _getBlogHtml,
+     getContinueReadingElement: _getContinueReadingElement,
+     generateBlogDetailsPage: _generateBlogDetailsPage
+    };
+
+    function _getBlogHtml(i, blog, blogs){
+         var html = '';
+            html += '<div class="col-xs-12 blog ' +
+                (i != blogs.length - 1 ? 'bottom-border-grey-thick' : '') +
+                '">'
             html += '<div class="form-group">';
-            html += '<div style="font-size:16px">'+blog.date+'</div>';
-            html += '<strong>'+blog.heading+'</strong>';
+            html += '<div style="font-size:16px">' + blog.date + '</div>';
+            html += '<strong>' + blog.title.rendered + '</strong>';
             html += '</div>';
-            html += '<div class="blog-content">'+blog.content+'...</div>';
-            html += '<div class="text-right"><a class="text-orange" href="#">Continue Reading</a></div>';
+            html += '<div class="blog-content">';
+            html += (blog.excerpt ? blog.excerpt.rendered : blog.content.rendered);
+            html += '</div>';
             html += '</div>';
 
             return html;
-        }
-    })
-)
+    }
+
+     function _getContinueReadingElement() {
+        var continueReadingLinkHtml = '<div class="text-right"><a class="text-orange" href="javascript:void(0)">' +
+            'Continue Reading</a></div>';
+        return $(continueReadingLinkHtml);
+    }
+
+    function _generateBlogDetailsPage(blog) {
+        var blogDetailsContainer = _blogDetailsContainer();
+        var content = _getBlogContent(blog);
+        blogDetailsContainer.append(content);
+        var backToBlogLink = _backToBlogLink();
+        blogDetailsContainer.append(backToBlogLink);
+        return blogDetailsContainer;
+    }
+
+    function _getBlogContent(blog){
+        var blogContentWrapper = $('<div class="form-group"></div>');
+        var blogContent = blog.content.rendered;
+        var blogContentElement = $(blogContent).wrap(blogContentWrapper);
+        return blogContentElement;
+    }
+
+    function _blogDetailsContainer() {
+        var container = '<div class="blog-details-container"></div>';
+        return $(container);
+    }
+
+    function _backToBlogLink(){
+        var html = '<div class="text-right"><a class="text-orange" href="javascript:void(0)">' +
+            'Back to Blogs</a></div>';
+        return $(html);
+    };
+})();
+
+ // $.ajax({
+        //     dataType: "json",
+        //     url: 'http://localhost:7080/wordpress/wp-json/wp/v2/posts',
+        //     success: success
+        // });

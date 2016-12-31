@@ -435,7 +435,17 @@
   }
 }
 
+#blogs .blog:last-of-type{
+    border-bottom: none;
+}
+
 .blog{
     padding-top: 25px;
     padding-bottom: 25px;
+    border-bottom: 3px solid rgb(215, 215, 215);
+}
+
+.blog-details-container{
+    padding-top: 50px;
+    padding-bottom: 50px; 
 }

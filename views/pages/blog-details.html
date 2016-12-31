@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome to D4</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet" />
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="/lib/font-awesome/font-awesome.min.css" />
+    <link rel="stylesheet" href="/style/animate.css" />
+    <link rel="stylesheet" href="/lib/smartmenus-1.0.1/smartmenus-1.0.1/css/sm-clean/sm-clean.css" />
+    <link rel="stylesheet" href="/style/main.css" />
+</head>
+
+<body>
+    <% include ../partials/navbar.html %>
+
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-2 col-xs-12"></div>
+                    <div class="col-sm-8 col-xs-12">
+                        <div class="blog-details-container">
+                            <div class="form-group">
+                                <div style="font-size:16px">
+                                    <%- blog.date %>
+                                </div>
+                                <strong> <%=  blog.title.rendered %></strong>
+                            </div>
+                            <div class="blog-content">
+                                <%- blog.content.rendered %>
+                            </div>
+
+                            <div class="pull-left">
+                                <a class="text-orange" href="/blog">
+                                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                    <strong>Back to Blog</strong>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container-fluid bg-grey">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3 general-info-container">
+                        <ul class="quick-info-links text-black">
+                            <li><strong>Company</strong></li>
+                            <li>Home</li>
+                            <li>About Us</li>
+                            <li>Approach</li>
+                            <li>Clients</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 general-info-container">
+                        <ul class="quick-info-links text-black">
+                            <li><strong>Resources</strong></li>
+                            <li>White Paper</li>
+                            <li>Solution</li>
+                            <li>Career</li>
+                            <li>Team</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 general-info-container">
+                        <ul class="quick-info-links text-black">
+                            <li><strong>Need Help?</strong></li>
+                            <li>Contact Us</li>
+                            <li>FAQ</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 general-info-container">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <% include ../partials/footer.html %>
+
+
+            <script src="/lib/jquery/jquery-1.9.1.min.js"></script>
+            <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+            <script src="/lib/smartmenus-1.0.1/smartmenus-1.0.1/jquery.smartmenus.min.js"></script>
+            <script src="/lib/smartmenus-1.0.1/smartmenus-1.0.1/addons/bootstrap/jquery.smartmenus.bootstrap.min.js"></script>
+            <script src="/javascript/navbar-animation.js"></script>
+            <script src="/javascript/blogs.js"></script>
+</body>
+
+</html>
